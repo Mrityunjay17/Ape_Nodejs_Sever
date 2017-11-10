@@ -4,8 +4,9 @@ var app=express();
 
 
 app.get('/',(req,res)=>{
-    res.send({Name:'Mrityunjay Pandey'})
+    res.send("connection established")
 });
+
 
 app.listen(2000,()=>{
     console.log('Server is running in port 2000')
