@@ -9,7 +9,9 @@
   "author": "Mrityunjay",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "mongoose": "^4.13.1"
+    "mongoose": "^4.13.1",
+    "validator": "^9.1.1"
   }
 }
