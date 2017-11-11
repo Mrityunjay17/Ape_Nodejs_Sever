@@ -66,6 +66,21 @@ var AdminShema=new mongoose.Schema({
     }
 });
 
+
+AdminShema.statics.login = function (email, password) {
+    var User = this;
+    return User.findOne({ EmailId: email,Password:password }).then((user) => {
+
+        if (!user) {
+            return Promise.reject('User Not Found');
+        }
+        return user;
+    }).catch((e)=>{
+        return Promise.reject(e);
+    })
+};
+
+
 var Admin=mongoose.model('admin',AdminShema);
 
 module.exports=Admin;
