@@ -2,36 +2,44 @@ const mongoose=require("../database/mongo-db");
 const validator = require('validator');
 
 var AdminShema=new mongoose.Schema({
-    Firstname:{
+    First_Name:{
         type:String,
-        required:true,
+        required:[true,'First Name is required'],
         minlength:1,
         trim:true
     },
-    Middlename: {
+    Middle_Name: {
         type: String,
         trim: true,
     },
-    Lastname:{
+    Last_Name:{
         type:String,
         trim:true
     },
-    DateofBirth:{
+    Date_Of_Birth:{
         type:Date,
-        required:true,
+        required:[true,'Date Of Birth is required'],
         minlength:1,
         trim:true
     },
     Sex:{
         type:String,
-        required:true,
+        required:[true,'Gender is required'],
         maxlength:[1,"Not more than 1"],
         trim:true
     },
-    Guardianname:{
+    Guardian_First_name:{
         type:String,
-        required:true,
+        required:[true,'Guardian First Name is required'],
         minlength:1,
+        trim:true
+    },
+    Guardian_Middle_name:{
+        type:String,
+        trim:true
+    },
+    Guardian_Last_name:{
+        type:String,
         trim:true
     },
     EmailId: {
@@ -61,7 +69,7 @@ var AdminShema=new mongoose.Schema({
     Password:{
         minlength: 6,
         type: String,
-        required: true,
+        required: [true,'Password required'],
         trim: true
     }
 });
