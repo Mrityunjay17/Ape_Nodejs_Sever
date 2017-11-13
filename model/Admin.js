@@ -16,18 +16,6 @@ var AdminShema=new mongoose.Schema({
         type:String,
         trim:true
     },
-    Date_Of_Birth:{
-        type:Date,
-        required:[true,'Date Of Birth is required'],
-        minlength:1,
-        trim:true
-    },
-    Sex:{
-        type:String,
-        required:[true,'Gender is required'],
-        maxlength:[1,"Not more than 1"],
-        trim:true
-    },
     Guardian_First_name:{
         type:String,
         required:[true,'Guardian First Name is required'],
@@ -40,6 +28,18 @@ var AdminShema=new mongoose.Schema({
     },
     Guardian_Last_name:{
         type:String,
+        trim:true
+    },
+    Date_Of_Birth:{
+        type:Date,
+        required:[true,'Date Of Birth is required'],
+        minlength:1,
+        trim:true
+    },
+    Sex:{
+        type:String,
+        required:[true,'Gender is required'],
+        maxlength:[1,"Not more than 1"],
         trim:true
     },
     EmailId: {

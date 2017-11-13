@@ -7,15 +7,17 @@ var jsonParser = bodyParser.json();
 
 var value;
 
-Admin.count(function (err, count) {
-    if (!err && count === 0) {
-       return value="0";
-    }
-    value="1";
-});
+
 
 app.get('/',(req,res)=>{
-    res.send(value)
+
+    Admin.count(function (err, count) {
+        if (!err && count === 0) {
+            return  res.send("0")
+        }
+        res.send("1");
+    });
+
 });
 
 app.post('/create_admin',jsonParser,(req,res)=>{
