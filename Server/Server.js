@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 var app=express();
 var jsonParser = bodyParser.json();
 
-var value;
-
 
 
 app.get('/',(req,res)=>{
